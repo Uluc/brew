@@ -1,35 +1,40 @@
 import React from "react";
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
-import menuStyle from './menuStyle.css';
+import SectionItem from "./SectionItem";
+import { StyledTabs, StyledTab } from "../styles/StyledTabs";
+import {SectionTitle} from "../styles/StyledSection";
 
 function Menu() {
-  const mystyle = {
-    color: "white",
-    backgroundColor: "DodgerBlue",
-  };
-
   return (
-    <Tabs defaultActiveKey="sushi_or_sashimi" id="uncontrolled-tab-example">
-      <Tab
-        eventKey="sushi_or_sashimi"
-        title="Sushi or Sashimi"
-      >
-        <h1>Tab1</h1>
-      </Tab>
-      <Tab eventKey="appetizers" title="Appetizers">
+    <StyledTabs
+      defaultActiveKey="sushi_or_sashimi"
+      id="uncontrolled-tab-example"
+    >
+      <StyledTab eventKey="sushi_or_sashimi" title="Sushi or Sashimi">
+        <SectionTitle>Appetizers</SectionTitle>
+        <SectionItem />
+        <SectionItem />
+        <SectionItem />
+        <SectionItem />
+        <SectionItem />
+        <SectionItem />
+        <SectionItem />
+        <SectionItem />
+        <SectionItem />
+      </StyledTab>
+
+      <StyledTab eventKey="appetizers" title="Appetizers">
         <h1>Tab2</h1>
-      </Tab>
-      <Tab eventKey="specialty_rolls" title="Specialty Rolls">
+      </StyledTab>
+
+      <StyledTab eventKey="specialty_rolls" title="Specialty Rolls">
         <h1>Tab3</h1>
-      </Tab>
-      <Tab eventKey="salad" title="Salad">
+      </StyledTab>
+
+      <StyledTab eventKey="salad" title="Salad">
         <h1>Tab4</h1>
-      </Tab>
-    </Tabs>
+      </StyledTab>
+    </StyledTabs>
   );
 }
 
 export default Menu;
-
-
