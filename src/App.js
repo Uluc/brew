@@ -5,12 +5,11 @@ import React, { Component } from "react";
 import Checkout from "./components/Checkout";
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
-import Home from "./components/Home";
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -18,8 +17,7 @@ function App() {
       <Navbar />
 
       <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/menu" component={Menu} />
+        <Route path="/" component={Menu} exact />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
       </Switch>

@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row"
 import { SectionTitle, DishContainer,
-FoodCol, PriceCol, DishInfo, DishHeading } from "../styles/StyledSection";
+FoodCol, PriceCol, DishInfo, DishHeading, DishPrice } from "../styles/StyledSection";
 
 function SectionItem() {
   return (
@@ -15,7 +15,7 @@ function SectionItem() {
                 </DishInfo>
             </FoodCol>
             <PriceCol>
-                <p>15$$</p>
+                <DishPrice>14.99</DishPrice>
             </PriceCol>
         </Row>
     </DishContainer>

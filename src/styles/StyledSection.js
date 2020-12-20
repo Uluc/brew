@@ -3,7 +3,11 @@ import Container from 'react-bootstrap/Container'
 import Col from "react-bootstrap/Col"
 
 export const SectionTitle = styled.h1`
+    
     text-align: center;
+    font-family: 'Rubik', sans-serif;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
 `;
 
 
@@ -19,10 +23,15 @@ export const DishInfo = styled.p`
     font-size: 0.8rem;
 `;
 
-export const DishPrice = styled.p``;
+export const DishPrice = styled.p`
+    font-family: 'Numans', sans-serif;
+    font-size: 1rem;
+`;
+
 
 
 export const DishContainer = styled(Container)` 
+    
 `;
 
 export const FoodCol = styled(Col)`
