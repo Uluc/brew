@@ -8,6 +8,8 @@ import {
   DishInfo,
   DishHeading,
   DishPrice,
+  StyledButton,
+  DishHeader
 } from "../styles/StyledSection";
 
 const SectionItem = ({ data }) => {
@@ -19,16 +21,21 @@ const SectionItem = ({ data }) => {
         <DishContainer>
           {product.meals.map((spec, index) => (
             <Row key={index}>
-              <FoodCol xs={9}>
+              <FoodCol xs={8}>
+              <DishHeader>
                 <DishHeading> {spec.name} </DishHeading>
+                <DishPrice> {spec.price} </DishPrice> 
+                </DishHeader>
                 <DishInfo> {spec.desc}</DishInfo>
               </FoodCol>
               <PriceCol>
-                <DishPrice> {spec.price} </DishPrice>
+                {/* <DishPrice> {spec.price} </DishPrice> */}
+                <StyledButton>Add to Cart</StyledButton>
               </PriceCol>
             </Row>
           ))}
         </DishContainer>
+        
       </div>
     );
   });
