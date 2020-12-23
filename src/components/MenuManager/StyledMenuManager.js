@@ -24,31 +24,7 @@ export const AddIcon = styled(BsPlus)`
    cursor: pointer;
 `;
 
-export const RemoveIcon = styled.div``;
 
-export const SectionButton = styled.button`
-    font-family: "Rubik", sans-serif;
-    font-weight: 600;
-    font-size: 1.7rem;
-    padding: 0.8rem 2rem;
-    width: 40vw;
-    color: #c32e1d;
-    text-align: center;
-    border-color: #c32e1d;
-    border-width: 2px;
-    background-color: transparent;
-    border-style: solid;
-    border-radius: 5px;
-    transition: 0.2s all ease-in;
-
-    &:hover, &:focus{
-        background-color: #c32e1d;
-        color: white;
-
-    }
-    
-
-`;
 export const SectionContainer = styled.div`
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -59,3 +35,15 @@ export const SectionContainer = styled.div`
 
 `;
 export const MenuManagerContainer = styled(Container)``;
+
+export const EditSectionButton = styled.button`
+    padding: 2rem, 3rem;
+    border-style: solid;
+    border-color: #c32e1d;
+    border-radius: 10px;
+    background-color: transparent;
+    font-family: "Numans";
+    font-size: 1.3rem;
+    color: #c32e1d
+
+`;

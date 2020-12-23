@@ -8,9 +8,7 @@ import {BsPencil, BsX} from 'react-icons/bs'
 export const DishContainer = styled(Container)`
     margin: 1rem;
     width: 40vw;
-    border-width: 0px;
-    border-bottom: 2px;
-    border-style: solid;
+    
 `;
 
 export const DishHeading = styled.h3`
@@ -51,7 +49,11 @@ export const PriceCol = styled(Col)`
 
 export const DishRow = styled(Row)`
     display: flex;
-    
+    border-width: 0px;
+    border-color: #d3d3d3;
+    border-bottom: 2px;
+    border-style: solid;
+    margin-bottom: 1rem;
 `;
 
 export const EditIcon = styled(BsPencil)`
@@ -65,4 +67,27 @@ export const DeleteIcon = styled(BsX)`
     cursor: pointer;
 `;
 
+export const SectionButton = styled.button`
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    padding: 0.8rem 2rem;
+    width: 40vw;
+    color: #c32e1d;
+    text-align: center;
+    border-color: #c32e1d;
+    border-width: 2px;
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 5px;
+    transition: 0.2s all ease-in;
+    margin-bottom: 1rem;
+
+    &:hover, &:focus{
+        background-color: #c32e1d;
+        color: white;
+
+    }
+    
+`;
 
