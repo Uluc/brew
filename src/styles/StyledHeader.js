@@ -18,6 +18,13 @@ export const StyledHeaderText = styled.p`
 
 export const HeaderWrapper = styled.div`
     background-color: #823535;
-    height: 10rem;
+    height: 20vh;
     padding-bottom: 2rem;
+`;
+
+export const PageHeader = styled.h1`
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
 `;

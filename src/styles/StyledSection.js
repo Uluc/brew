@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 export const SectionTitle = styled.h1`
   text-align: center;
   font-family: "Rubik", sans-serif;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.2rem;
   padding-top: 1rem;
 `;
 
@@ -43,9 +43,7 @@ export const FoodCol = styled(Col)`
 `;
 
 export const PriceCol = styled(Col)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: flex;  
 `;
 
 export const StyledButton = styled.button`
