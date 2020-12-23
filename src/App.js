@@ -3,9 +3,10 @@ import "./App.css";
 import React, { Component } from "react";
 
 import Checkout from "./components/Checkout";
-import Menu from "./components/Menu";
-import Cart from "./components/Cart";
+import Menu from "./components/Menu/";
+import MenuManager from "./components/MenuManager/";
 import Navbar from "./components/Navbar";
+import AddDish from "./components/AddDish";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -18,8 +19,9 @@ function App() {
 
       <Switch>
         <Route path="/" component={Menu} exact />
-        <Route path="/cart" component={Cart} />
+        <Route path="/menumanager" component={MenuManager} />
         <Route path="/checkout" component={Checkout} />
+        <Route path="/adddish" component={AddDish} />
       </Switch>
     </main>
   );
