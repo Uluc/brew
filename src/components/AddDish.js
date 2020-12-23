@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import { PageHeader } from "../styles/StyledHeader";
+import {
+  StyledInput,
+  StyledSubmissionButton,
+  StyledForm,
+  StyledLabel,
+  InputPageContainer,
+} from "../styles/styledInput";
 
 function MenuManager() {
   const [price, setPrice] = useState("");
@@ -10,33 +18,36 @@ function MenuManager() {
     //   api.login(email, password);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      
-      <label>Name</label>
-      <input
-        type="text"
-        id="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <InputPageContainer>
+      <PageHeader> New Dish </PageHeader>
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledLabel>Name</StyledLabel>
+        <StyledInput
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <label>Price</label>
-      <input
-        type="int"
-        id="price"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
-      />
+        <StyledLabel>Price</StyledLabel>
+        <StyledInput
+          type="int"
+          id="price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
 
-      <label>Description</label>
-      <input
-        type="text"
-        id="desc"
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
-      />
+        <StyledLabel>Description</StyledLabel>
+        <StyledInput
+          type="text"
+          id="desc"
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+        />
 
-    </form>
+        <StyledSubmissionButton>Submit</StyledSubmissionButton>
+      </StyledForm>
+    </InputPageContainer>
   );
 }
 
