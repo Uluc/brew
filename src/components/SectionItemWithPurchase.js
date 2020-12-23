@@ -16,21 +16,21 @@ const SectionItem = ({ data }) => {
   return data.map((product, index) => {
     return (
       <div key={index}>
-        <SectionTitle >{product.section}</SectionTitle>
+        <SectionTitle >{product.section}</SectionTitle>;
         
         <DishContainer>
           {product.meals.map((spec, index) => (
             <Row key={index}>
-              <FoodCol xs={9}>
+              <FoodCol xs={8}>
               <DishHeader>
                 <DishHeading> {spec.name} </DishHeading>
-                
+                <DishPrice> {spec.price} </DishPrice> 
                 </DishHeader>
                 <DishInfo> {spec.desc}</DishInfo>
               </FoodCol>
               <PriceCol>
-                <DishPrice> {spec.price} </DishPrice>
-                
+                {/* <DishPrice> {spec.price} </DishPrice> */}
+                <StyledButton>Add to Cart</StyledButton>
               </PriceCol>
             </Row>
           ))}
