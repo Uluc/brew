@@ -6,11 +6,31 @@ import { productData } from "../../data/dataItem";
 import { Tabs, Tab, TabPanel, TabList } from "react-web-tabs";
 import "./react-web-tabs.css";
 
-function Menu() {
-  const tabs = [];
-  const tabPanels = [];
+export default class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoaded: false,
+      items: [],
+    };
+  }
 
-  productData.map((product, index) => {
+  componentDidMount() {
+    this.setState({
+      isLoaded: true,
+      items: productData,
+    });
+  }
+
+  componentWillUnmount() {}
+
+  render() {
+    const tabs = [];
+    const tabPanels = [];
+
+    const {isLoaded, items} = this.state;
+
+    items.map((product, index) => {
     tabs.push(
       <Tab key={index} tabFor={product.section}>
         {product.section}
@@ -24,12 +44,12 @@ function Menu() {
     return(tabs, tabPanels)
   });
 
-  return (
+  return(
     <Tabs>
-      <TabList>{tabs}</TabList>
-      {tabPanels}
-    </Tabs>
-  );
+           <TabList>{tabs}</TabList>
+          {tabPanels}
+         </Tabs>
+  )
+  }
 }
 
-export default Menu;

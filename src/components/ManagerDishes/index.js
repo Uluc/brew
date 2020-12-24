@@ -14,7 +14,8 @@ import {
 } from "./StyledManagerDishes";
 
 const ManagerDishes = ({ data }) => {
-  return data.map((product, index) => {
+
+    return data.map((product, index) => {
     return (
       <DishContainer key={index}>
         <SectionButton> {product.section} </SectionButton>
