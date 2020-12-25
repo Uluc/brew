@@ -1,5 +1,5 @@
 import React from "react";
-import SectionItem from "../SectionItem";
+import SectionItem from "../SectionDishes/";
 
 import { productData } from "../../data/dataItem";
 
@@ -28,28 +28,27 @@ export default class Menu extends React.Component {
     const tabs = [];
     const tabPanels = [];
 
-    const {isLoaded, items} = this.state;
+    const { isLoaded, items } = this.state;
 
     items.map((product, index) => {
-    tabs.push(
-      <Tab key={index} tabFor={product.section}>
-        {product.section}
-      </Tab>
-    );
-    tabPanels.push(
-      <TabPanel key={index} tabId={product.section}>
-        <SectionItem data={[product]} />
-      </TabPanel>
-    );
-    return(tabs, tabPanels)
-  });
+      tabs.push(
+        <Tab key={index} tabFor={product.section}>
+          {product.section}
+        </Tab>
+      );
+      tabPanels.push(
+        <TabPanel key={index} tabId={product.section}>
+          <SectionItem data={[product]} />
+        </TabPanel>
+      );
+      return tabs, tabPanels;
+    });
 
-  return(
-    <Tabs>
-           <TabList>{tabs}</TabList>
-          {tabPanels}
-         </Tabs>
-  )
+    return (
+      <Tabs>
+        <TabList>{tabs}</TabList>
+        {tabPanels}
+      </Tabs>
+    );
   }
 }
-

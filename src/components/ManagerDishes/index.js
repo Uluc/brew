@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DishContainer,
   DishHeading,
@@ -11,11 +11,19 @@ import {
   DeleteIcon,
   DishHeadingContainer,
   SectionButton,
+  AddIcon,
+  AddIconContainer
 } from "./StyledManagerDishes";
 
 const ManagerDishes = ({ data }) => {
 
-    return data.map((product, index) => {
+  const [list, setList] = useState(data);
+
+  function handleRemove(id) {
+    console.log(id)
+  }
+
+  return list.map((product, index) => {
     return (
       <DishContainer key={index}>
         <SectionButton> {product.section} </SectionButton>
@@ -32,10 +40,15 @@ const ManagerDishes = ({ data }) => {
             </FoodCol>
             <PriceCol>
               <DishPrice> {dish.price} </DishPrice>
-              <DeleteIcon />
+              <DeleteIcon onClick={() => handleRemove(dish.name)}/>
             </PriceCol>
           </DishRow>
         ))}
+        <AddIconContainer>
+          <AddIcon />
+          <p>New Dish</p>
+          
+        </AddIconContainer>
       </DishContainer>
     );
   });

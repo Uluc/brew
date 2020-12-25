@@ -2,13 +2,12 @@ import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import {BsPencil, BsX} from 'react-icons/bs'
+import {BsPencil, BsX, BsPlus} from 'react-icons/bs'
 
 
 export const DishContainer = styled(Container)`
     margin: 1rem;
     width: 40vw;
-    
 `;
 
 export const DishHeading = styled.h3`
@@ -89,5 +88,28 @@ export const SectionButton = styled.button`
 
     }
     
+`;
+
+
+export const AddIconContainer = styled.div`
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; 
+  margin-top: 2rem;
+
+  p{
+      margin-bottom: -1rem;
+      font-family: "Numans", sans-serif;
+      font-size: 0.9rem;
+  }
+
+`;
+
+export const AddIcon = styled(BsPlus)`
+   font-size: 3rem;
+   cursor: pointer;
 `;
 

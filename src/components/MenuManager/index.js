@@ -38,7 +38,7 @@ export default class Menu extends React.Component {
           })}
         </SectionContainer>
         <AddIconContainer>
-          <p>Add Section</p>
+          <p>New Section</p>
           <AddIcon />
         </AddIconContainer>
       </MenuManagerContainer>

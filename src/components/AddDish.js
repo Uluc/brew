@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { PageHeader } from "../styles/StyledHeader";
 import {
   StyledInput,
   StyledSubmissionButton,
@@ -19,7 +18,7 @@ function MenuManager() {
   };
   return (
     <InputPageContainer>
-      <PageHeader> New Dish </PageHeader>
+      {/* <PageHeader> New Dish </PageHeader> */}
       <StyledForm onSubmit={handleSubmit}>
         <StyledLabel>Name</StyledLabel>
         <StyledInput

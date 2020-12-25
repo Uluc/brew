@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StyledLink, LinkWrapper } from "../styles/StyledLink";
-import { StyledHeader, HeaderWrapper, StyledHeaderText } from "../styles/StyledHeader";
+import { StyledLink, LinkWrapper } from "./StyledLink";
+import { StyledHeader, HeaderWrapper, StyledHeaderText } from "./StyledHeader";
 
 function Navbar() {
   return (
