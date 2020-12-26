@@ -83,10 +83,12 @@ export const DishContainer = styled.div`
 export const Dish = styled.h2`
   margin: 0;
   font-size: 1rem;
+  font-weight: 600;
 `;
 
 export const DishPrice = styled.p`
     margin: 0;
+    font-size: 0.8rem;
 `;
 
 export const RemoveCol = styled.div`
