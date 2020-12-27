@@ -6,8 +6,9 @@ import {BsPencil, BsX, BsPlus} from 'react-icons/bs'
 
 
 export const DishContainer = styled(Container)`
+  
     margin: 1rem;
-    width: 40vw;
+
 `;
 
 export const DishHeading = styled.h3`
@@ -38,13 +39,18 @@ export const FoodCol = styled(Col)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background-color: greenyellow; 
 `;
 
 export const PriceCol = styled(Col)`
-  display: flex;  
-  justify-content: space-between;
+  display: flex; 
+  background-color: red; 
 `;
 
+export const DeleteCol = styled(Col)`
+  display: flex;  
+  background-color: salmon;
+`;
 
 export const DishRow = styled(Row)`
     display: flex;
@@ -53,6 +59,7 @@ export const DishRow = styled(Row)`
     border-bottom: 2px;
     border-style: solid;
     margin-bottom: 1rem;
+    background-color:blue;
 `;
 
 export const EditIcon = styled(BsPencil)`
@@ -71,7 +78,6 @@ export const SectionButton = styled.button`
     font-weight: 600;
     font-size: 1.7rem;
     padding: 0.8rem 2rem;
-    width: 40vw;
     color: #c32e1d;
     text-align: center;
     border-color: #c32e1d;
@@ -87,7 +93,6 @@ export const SectionButton = styled.button`
         color: white;
 
     }
-    
 `;
 
 

@@ -9,7 +9,7 @@ import { productData } from "../../data/dataItem";
 
 import ManagerDishes from "../ManagerDishes";
 
-export default class Menu extends React.Component {
+export default class MenuManager extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
