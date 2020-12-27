@@ -5,7 +5,7 @@ import {
   MenuManagerContainer,
   SectionContainer,
 } from "./StyledMenuManager";
-import { productData } from "../../data/dataItem";
+import { productData } from "../../../data/dataItem";
 
 import ManagerDishes from "../ManagerDishes";
 
