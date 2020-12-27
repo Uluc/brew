@@ -16,8 +16,11 @@ import {
   AddIconContainer,
 } from "./StyledManagerDishes";
 
+import NewDishModal from "../NewDishModal/"
+
 const ManagerDishes = ({ data }) => {
   const [list, setList] = useState(data);
+  const [modalShow, setModalShow] = useState(false);
 
   function handleRemove(id) {
     console.log(id);
@@ -51,9 +54,13 @@ const ManagerDishes = ({ data }) => {
           </DishRow>
         ))}
         <AddIconContainer>
-          <AddIcon />
+          <AddIcon onClick={() => setModalShow(true)} />
           <p>New Dish</p>
         </AddIconContainer>
+        <NewDishModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       </DishContainer>
     );
   });

@@ -1,5 +1,5 @@
 import React from "react";
-import { productData } from "../../data/dataItem";
+import { productData } from "../../../data/dataItem";
 
 import CheckoutItem from "../CheckoutItem/";
 import CheckoutTotals from "../CheckoutTotals/";
