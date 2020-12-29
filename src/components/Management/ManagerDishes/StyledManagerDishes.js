@@ -38,7 +38,7 @@ export const DishPrice = styled.p`
 export const FoodCol = styled(Col)`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;w; 
+  justify-content: flex-start;
 `;
 
 export const PriceCol = styled(Col)`

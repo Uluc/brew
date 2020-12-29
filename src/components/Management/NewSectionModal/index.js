@@ -9,6 +9,7 @@ import {
 } from "./StyledSectionModal";
 
 function NewDishModal(props) {
+
   return (
     <Modal
       {...props}
@@ -22,13 +23,13 @@ function NewDishModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <AddSection/>
+        <AddSection edit= {props.editModal}/>
       </Modal.Body>
     </Modal>
   );
-}
+  }
 
-const AddSection = () => {
+const AddSection = ({edit}) => {
     const [name, setName] = useState("");
   
     const handleSubmit = (e) => {
@@ -48,7 +49,9 @@ const AddSection = () => {
           />
   
           <StyledSubmissionButton>Submit</StyledSubmissionButton>
+          <h1> {edit} </h1>
         </StyledForm>
+        
       </InputPageContainer>
     );
   }

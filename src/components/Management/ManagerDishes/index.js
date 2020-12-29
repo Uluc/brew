@@ -21,9 +21,15 @@ import NewDishModal from "../NewDishModal/"
 const ManagerDishes = ({ data }) => {
   const [list, setList] = useState(data);
   const [modalShow, setModalShow] = useState(false);
+  const [editModal, setEditModal] = useState(false);
 
   function handleRemove(id) {
     console.log(id);
+  }
+
+  editModalFunc= (e) => {
+    setEditModal(true);
+    setModalShow(true);
   }
 
   return list.map((product, index) => {
@@ -37,7 +43,7 @@ const ManagerDishes = ({ data }) => {
             <FoodCol xs={8}>
               <DishHeadingContainer>
                 <DishHeading> {dish.name} </DishHeading>
-                <EditIcon />
+                <EditIcon onClick = {this.editModalFunc}/>
               </DishHeadingContainer>
 
               <DishInfo>{dish.desc}</DishInfo>
@@ -58,6 +64,7 @@ const ManagerDishes = ({ data }) => {
           <p>New Dish</p>
         </AddIconContainer>
         <NewDishModal
+        edit = {editModal}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
