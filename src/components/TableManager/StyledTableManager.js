@@ -2,6 +2,11 @@ import styled from "styled-components";
 import Container from "react-bootstrap/Container"
 import { BsPlus, BsX } from "react-icons/bs";
 
+export const QRCode = styled.img`
+    height: 100px;
+    width: 100px;
+`;
+
 export const Heading = styled.h1`
     text-align: center;
     margin: 1rem;
@@ -15,9 +20,12 @@ export const TableContainer = styled(Container)`
 `;
 
 export const Table = styled.div`
-    height: 200px;
+    height: 175px;
     width: 150px;
-    background-color: red;
+    border-style: solid;
+    border-color: #c32e1d;
+    border-width: 3px;
+    border-radius: 4px;
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -29,16 +37,25 @@ export const TableHeader = styled.h2`
     font-weight: 600;
     font-size: 1.6rem;
     color: #c32e1d;
+    text-align: center
 `;
 
-export const QRContainer = styled.div``;
+export const QRContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 
 
 export const DeleteIcon = styled(BsX)`
     font-size: 2rem;
     cursor: pointer;
-    justify-self: flex-end;
-    background-color: blue;
+    
+`;
+
+export const DeleteContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
 `;
 
 export const AddIconContainer = styled.div`
@@ -51,7 +68,6 @@ export const AddIconContainer = styled.div`
   margin-top: 2rem;
 
   p{
-      margin-bottom: -1rem;
       font-family: "Numans", sans-serif;
       font-size: 0.9rem;
   }

@@ -1,6 +1,18 @@
-
 import React, { Component } from "react";
-import { Heading, TableContainer, Table, DeleteIcon,AddIconContainer, AddIcon } from "./StyledTableManager";
+import {
+  Heading,
+  TableContainer,
+  Table,
+  DeleteIcon,
+  AddIconContainer,
+  AddIcon,
+  DeleteContainer,
+  TableHeader,
+  QRContainer,
+  QRCode
+} from "./StyledTableManager";
+
+import qr from "../../images/qr_exampel.png"
 
 export default class TableManager extends Component {
   constructor(props) {
@@ -16,27 +28,23 @@ export default class TableManager extends Component {
       <>
         <Heading>Tables</Heading>
         <TableContainer>
-            <Table>
-                <DeleteIcon/>
-                <h2> Table 1</h2>
-            </Table>
-            <Table>
-                <h2> Table 1</h2>
-            </Table>
-            <Table>
-                <h2> Table 1</h2>
-            </Table>
-            <Table>
-                <h2> Table 1</h2>
-            </Table>
-            <Table>
-                <h2> Table 1</h2>
-            </Table>
+          <Table>
+            <DeleteContainer>
+              <DeleteIcon />
+            </DeleteContainer>
+            <TableHeader>
+                Table 1
+            </TableHeader>
+            <QRContainer>
+                <QRCode src={qr} />
+            </QRContainer>
+          </Table>
         </TableContainer>
         <AddIconContainer>
-            <AddIcon/>
+            
+          <AddIcon />
+          <p>Add Table</p> 
         </AddIconContainer>
-
       </>
     );
   }
