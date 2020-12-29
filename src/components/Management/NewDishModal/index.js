@@ -17,58 +17,69 @@ function NewDishModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          New Dish
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">New Dish</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <AddDish/>
+        <AddDish edit={props.edit} />
       </Modal.Body>
     </Modal>
   );
 }
 
-const AddDish = () => {
-    const [price, setPrice] = useState("");
-    const [name, setName] = useState("");
-    const [desc, setDesc] = useState("");
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      //   api.login(email, password);
-    };
-    return (
-      <InputPageContainer>
-        {/* <PageHeader> New Dish </PageHeader> */}
-        <StyledForm onSubmit={handleSubmit}>
-          <StyledLabel>Name</StyledLabel>
-          <StyledInput
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-  
-          <StyledLabel>Price</StyledLabel>
-          <StyledInput
-            type="int"
-            id="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-  
-          <StyledLabel>Description</StyledLabel>
-          <StyledInput
-            type="text"
-            id="desc"
-            value={desc}
-            onChange={(e) => setDesc(e.target.value)}
-          />
-  
-          <StyledSubmissionButton>Submit</StyledSubmissionButton>
-        </StyledForm>
-      </InputPageContainer>
-    );
-  }
+const AddDish = ({ edit }) => {
+  const [price, setPrice] = useState("");
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
+  console.log(edit);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //   api.login(email, password);
+  };
+
+  React.useEffect(() => {
+
+    if(edit){
+        console.log("We are editting")
+        setPrice("1")
+        setName("")
+        setDesc("")
+    }
+  }, [edit])
+
+  return (
+
+    
+    <InputPageContainer>
+      {/* <PageHeader> New Dish </PageHeader> */}
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledLabel>Name</StyledLabel>
+        <StyledInput
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <StyledLabel>Price</StyledLabel>
+        <StyledInput
+          type="int"
+          id="price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+
+        <StyledLabel>Description</StyledLabel>
+        <StyledInput
+          type="text"
+          id="desc"
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+        />
+
+        <StyledSubmissionButton>Submit</StyledSubmissionButton>
+      </StyledForm>
+    </InputPageContainer>
+  );
+};
 
 export default NewDishModal;

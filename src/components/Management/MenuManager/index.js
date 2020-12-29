@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   AddIconContainer,
   AddIcon,
@@ -6,6 +6,8 @@ import {
   SectionContainer,
 } from "./StyledMenuManager";
 import { productData } from "../../../data/dataItem";
+
+import NewSectionModal from "../NewSectionModal/"
 
 import ManagerDishes from "../ManagerDishes";
 
@@ -15,6 +17,7 @@ export default class MenuManager extends React.Component {
     this.state = {
       isLoaded: false,
       items: [],
+      modalShow: false,
     };
   }
 
@@ -22,10 +25,18 @@ export default class MenuManager extends React.Component {
     this.setState({
       isLoaded: true,
       items: productData,
+
     });
   }
 
   componentWillUnmount() {}
+
+  showModal = (e) => {
+    e.preventDefault()
+    this.setState({
+      modalShow: !this.state.modalShow,
+    });
+  }
 
   render() {
     const {isLoaded, items} = this.state;
@@ -39,8 +50,13 @@ export default class MenuManager extends React.Component {
         </SectionContainer>
         <AddIconContainer>
           <p>New Section</p>
-          <AddIcon />
+          <AddIcon onClick={this.showModal} />
         </AddIconContainer>
+
+        <NewSectionModal
+        show={this.state.modalShow}
+        onHide={this.showModal}
+      />
       </MenuManagerContainer>
     );
   }

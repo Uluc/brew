@@ -39,17 +39,14 @@ export const FoodCol = styled(Col)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: greenyellow; 
 `;
 
 export const PriceCol = styled(Col)`
   display: flex; 
-  background-color: red; 
 `;
 
 export const DeleteCol = styled(Col)`
-  display: flex;  
-  background-color: salmon;
+ 
 `;
 
 export const DishRow = styled(Row)`
@@ -58,18 +55,17 @@ export const DishRow = styled(Row)`
     border-color: #d3d3d3;
     border-bottom: 2px;
     border-style: solid;
-    margin-bottom: 1rem;
-    background-color:blue;
+    margin-bottom: 1rem;;
 `;
 
 export const EditIcon = styled(BsPencil)`
     margin-left: 1.5rem;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     cursor: pointer;
 `;
 
 export const DeleteIcon = styled(BsX)`
-    font-size: 2rem;
+    font-size: 1.7rem;
     cursor: pointer;
 `;
 
