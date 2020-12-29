@@ -24,6 +24,8 @@ export default class ManagerDishes extends React.Component {
     this.state = {
       isLoaded: false,
       modalShow: false,
+      edit: false,
+      product:[]
     };
   }
 
@@ -36,9 +38,17 @@ export default class ManagerDishes extends React.Component {
 
   componentWillUnmount() {}
 
-  showModal = (e) => {
+  showAddModal = (e) => {
     this.setState({
       modalShow: !this.state.modalShow,
+      edit: false,
+    });
+  }
+
+  showEditModal = (e) => {
+    this.setState({
+      modalShow: !this.state.modalShow,
+      edit: true,
     });
   }
 
@@ -56,7 +66,7 @@ export default class ManagerDishes extends React.Component {
               <FoodCol xs={8}>
                 <DishHeadingContainer>
                   <DishHeading> {dish.name} </DishHeading>
-                  <EditIcon />
+                  <EditIcon onClick={this.showEditModal}/>
                 </DishHeadingContainer>
 
                 <DishInfo>{dish.desc}</DishInfo>
@@ -72,12 +82,13 @@ export default class ManagerDishes extends React.Component {
             </DishRow>
           ))}
           <AddIconContainer>
-            <AddIcon onClick={this.showModal} />
+            <AddIcon onClick={this.showAddModal} />
             <p>New Dish</p>
           </AddIconContainer>
           <NewDishModal 
+            edit={this.state.edit}
             show={this.state.modalShow}
-            onHide={this.showModal} />
+            onHide={this.showAddModal} />
         </DishContainer>
       );
     });
