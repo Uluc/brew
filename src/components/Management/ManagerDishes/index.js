@@ -16,61 +16,70 @@ import {
   AddIconContainer,
 } from "./StyledManagerDishes";
 
-import NewDishModal from "../NewDishModal/"
+import NewDishModal from "../NewDishModal/";
 
-const ManagerDishes = ({ data }) => {
-  const [list, setList] = useState(data);
-  const [modalShow, setModalShow] = useState(false);
-  const [editModal, setEditModal] = useState(false);
-
-  function handleRemove(id) {
-    console.log(id);
+export default class ManagerDishes extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoaded: false,
+      modalShow: false,
+    };
   }
 
-  editModalFunc= (e) => {
-    setEditModal(true);
-    setModalShow(true);
+  componentDidMount() {
+    this.setState({
+      isLoaded: true,
+
+    });
   }
 
-  return list.map((product, index) => {
-    return (
-      <DishContainer key={index}>
-        <SectionButton> {product.section} </SectionButton>
+  componentWillUnmount() {}
 
-        {product.meals.map((dish, index) => (
-          <DishRow key={index}>
-            
-            <FoodCol xs={8}>
-              <DishHeadingContainer>
-                <DishHeading> {dish.name} </DishHeading>
-                <EditIcon onClick = {this.editModalFunc}/>
-              </DishHeadingContainer>
+  showModal = (e) => {
+    this.setState({
+      modalShow: !this.state.modalShow,
+    });
+  }
 
-              <DishInfo>{dish.desc}</DishInfo>
-            </FoodCol>
+  render() {
 
-            <PriceCol xs={3}>
-              <DishPrice> {dish.price} </DishPrice>
-            </PriceCol>
+    const {data} = this.props;
+    
+    return data.map((product, index) => {
+      return (
+        <DishContainer key={index}>
+          <SectionButton> {product.section} </SectionButton>
 
-            <DeleteCol xs={1}>
-              <DeleteIcon onClick={() => handleRemove(dish.name)} />
-            </DeleteCol>
-            
-          </DishRow>
-        ))}
-        <AddIconContainer>
-          <AddIcon onClick={() => setModalShow(true)} />
-          <p>New Dish</p>
-        </AddIconContainer>
-        <NewDishModal
-        edit = {editModal}
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-      </DishContainer>
-    );
-  });
-};
+          {product.meals.map((dish, index) => (
+            <DishRow key={index}>
+              <FoodCol xs={8}>
+                <DishHeadingContainer>
+                  <DishHeading> {dish.name} </DishHeading>
+                  <EditIcon />
+                </DishHeadingContainer>
 
-export default ManagerDishes;
+                <DishInfo>{dish.desc}</DishInfo>
+              </FoodCol>
+
+              <PriceCol xs={3}>
+                <DishPrice> {dish.price} </DishPrice>
+              </PriceCol>
+
+              <DeleteCol xs={1}>
+                <DeleteIcon />
+              </DeleteCol>
+            </DishRow>
+          ))}
+          <AddIconContainer>
+            <AddIcon onClick={this.showModal} />
+            <p>New Dish</p>
+          </AddIconContainer>
+          <NewDishModal 
+            show={this.state.modalShow}
+            onHide={this.showModal} />
+        </DishContainer>
+      );
+    });
+  }
+}
